@@ -46,6 +46,7 @@ local kind_icons = {
   TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
+vim.g.cmp_active = true -- from https://github.com/ChristianChiarulli/nvim/blob/42286c3ec2b75b27ef22eaef3be72709ad6d5695/lua/user/cmp.lua#L55
 
 cmp.setup {
   snippet = {
