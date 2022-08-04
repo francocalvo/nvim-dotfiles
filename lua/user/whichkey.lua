@@ -85,7 +85,6 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -139,7 +138,7 @@ local mappings = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {
@@ -180,6 +179,23 @@ local mappings = {
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+  },
+
+  w = {
+    name = "Vimwiki",
+    w = { "<cmd>VimwikiIndex<CR>", "Open Personal Wiki" },
+    i = { "<cmd>VimwikiUISelect<CR>", "Open wikis index" },
+    d = { name = "Open diary index",
+          a = { "<cmd>VimwikiDiaryIndex 1<CR>", "In personal wiki" }, 
+          s = { "<cmd>VimwikiDiaryIndex 2<CR>", "In ReactO wiki" } },
+    D = { "<cmd>VimwikiDiaryGenerateLinks<CR>", "Update links in diary" },
+    n = { name = "New entry on diary",
+          a = { "<cmd>VimwikiMakeDiaryNote 1<CR>", "In personal wiki" }, 
+          s = { "<cmd>VimwikiMakeDiaryNote 2<CR>", "In ReactO wiki" } },
+    X = { "<cmd>VimwikiDeleteFile<CR>", "Delete current file" },
+    r = { "<cmd>VimwikiRenameFile<CR>", "Rename current file" },
+    b = { "<cmd>VimwikiGoBackLink<CR>", "Go to backlink" },
+    H = { "<cmd>:Vimwiki2HTMLBrowse<CR>", "Convert to HTML and open it" },
   },
 }
 
