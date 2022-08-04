@@ -111,7 +111,16 @@ return packer.startup(function(use)
   use "rcarriga/nvim-dap-ui"
   use "Pocco81/DAPInstall.nvim"
 
+  -- Note taking
   use 'vimwiki/vimwiki'
+
+  -- Winbar
+  use { 'fgheng/winbar.nvim', commit = 'd93ce3aa177b620e61c9ae19a168a0272e0d7699'}
+  use {
+      "SmiteshP/nvim-navic",
+      requires = "neovim/nvim-lspconfig"
+  }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
