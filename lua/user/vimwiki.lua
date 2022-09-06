@@ -18,9 +18,9 @@ vim.g.vimwiki_list = {
   },
   {
         path = "~/Nextcloud/ReactOData/Wiki",
-        template_path = "~/Nextcloud/ReactOData/Wiki/templates/",
-        template_ext = ".md",
-        template_default = "unit",
+        -- template_path = "~/Nextcloud/ReactOData/Wiki/templates/",
+        -- template_ext = ".md",
+        -- template_default = "unit",
         syntax = 'markdown',
         ext = '.md',
         auto_toc = 1,
