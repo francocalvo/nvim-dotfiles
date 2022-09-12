@@ -67,8 +67,9 @@ return packer.startup(function(use)
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim" 
+  use "lunarvim/darkplus.nvim"
   use 'Mofiqul/dracula.nvim'
+  use "shaunsingh/nord.nvim"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "c4dcb1244a8942b8d2bd3c0a441481e12f91cdf1" } -- The completion plugin
@@ -85,6 +86,8 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  --[[ use "williamboman/mason.nvim" -- replaces lsp-installer ]]
+  --[[ use "williamboman/mason-lspconfig.nvim" -- replaces lsp-installer ]]
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "RRethy/vim-illuminate" -- For highlighting the same word under cursor
@@ -115,12 +118,8 @@ return packer.startup(function(use)
   use 'vimwiki/vimwiki'
 
   -- Winbar
-  use { 'fgheng/winbar.nvim', commit = 'd93ce3aa177b620e61c9ae19a168a0272e0d7699'}
-  use {
-      "SmiteshP/nvim-navic",
-      requires = "neovim/nvim-lspconfig"
-  }
-
+  use 'fgheng/winbar.nvim'
+  use "SmiteshP/nvim-navic"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

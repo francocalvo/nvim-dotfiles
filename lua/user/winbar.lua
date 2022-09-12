@@ -45,10 +45,10 @@ M.get_filename = function()
       file_icon_color = ""
     end
 
-    local navic_text = vim.api.nvim_get_hl_by_name("NavicText", true)
-    vim.api.nvim_set_hl(0, "Winbar", { fg = navic_text.foreground })
+    --[[ local navic_text = vim.api.nvim_get_hl_by_name("NavicText", true) ]]
+    --[[ vim.api.nvim_set_hl(0, "Winbar", { fg = navic_text.foreground }) ]]
 
-    return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#Winbar#" .. filename .. "%*"
+    return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
   end
 end
 
@@ -114,7 +114,7 @@ M.get_winbar = function()
   local gps_added = false
   if not f.isempty(value) then
     local gps_value = get_gps()
-    value = value .. " " .. gps_value
+    value = value .. " " .. "%#LineNr#" .. gps_value .. "%*"
     if not f.isempty(gps_value) then
       gps_added = true
     end
@@ -141,5 +141,25 @@ M.get_winbar = function()
     return
   end
 end
+
+M.create_winbar = function()
+  vim.api.nvim_create_augroup("_winbar", {})
+  if vim.fn.has "nvim-0.8" == 1 then
+    vim.api.nvim_create_autocmd(
+      { "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
+      {
+        group = "_winbar",
+        callback = function()
+          local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
+          if not status_ok then
+            require("user.winbar").get_winbar()
+          end
+        end,
+      }
+    )
+  end
+end
+
+M.create_winbar()
 
 return M
