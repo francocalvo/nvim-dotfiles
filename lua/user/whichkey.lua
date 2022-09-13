@@ -172,6 +172,10 @@ local mappings = {
 
   t = {
     name = "Terminal",
+    ["1"] = { ":1ToggleTerm<cr>", "1" },
+    ["2"] = { ":2ToggleTerm<cr>", "2" },
+    ["3"] = { ":3ToggleTerm<cr>", "3" },
+    ["4"] = { ":4ToggleTerm<cr>", "4" },
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
     t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
@@ -186,16 +190,36 @@ local mappings = {
     w = { "<cmd>VimwikiIndex<CR>", "Open Personal Wiki" },
     i = { "<cmd>VimwikiUISelect<CR>", "Open wikis index" },
     d = { name = "Open diary index",
-          a = { "<cmd>VimwikiDiaryIndex 1<CR>", "In personal wiki" }, 
-          s = { "<cmd>VimwikiDiaryIndex 2<CR>", "In ReactO wiki" } },
+      a = { "<cmd>VimwikiDiaryIndex 1<CR>", "In personal wiki" },
+      s = { "<cmd>VimwikiDiaryIndex 2<CR>", "In ReactO wiki" } },
     D = { "<cmd>VimwikiDiaryGenerateLinks<CR>", "Update links in diary" },
     n = { name = "New entry on diary",
-          a = { "<cmd>VimwikiMakeDiaryNote 1<CR>", "In personal wiki" }, 
-          s = { "<cmd>VimwikiMakeDiaryNote 2<CR>", "In ReactO wiki" } },
+      a = { "<cmd>VimwikiMakeDiaryNote 1<CR>", "In personal wiki" },
+      s = { "<cmd>VimwikiMakeDiaryNote 2<CR>", "In ReactO wiki" } },
     X = { "<cmd>VimwikiDeleteFile<CR>", "Delete current file" },
     r = { "<cmd>VimwikiRenameFile<CR>", "Rename current file" },
     b = { "<cmd>VimwikiGoBackLink<CR>", "Go to backlink" },
     H = { "<cmd>:Vimwiki2HTMLBrowse<CR>", "Convert to HTML and open it" },
+  },
+
+  d = {
+    name = "Debug",
+    b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
+    c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+    i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
+    o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
+    O = { "<cmd>lua require'dap'.step_out()<cr>", "Out" },
+    r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Repl" },
+    l = { "<cmd>lua require'dap'.run_last()<cr>", "Last" },
+    u = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
+    x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
+  },
+
+  r = {
+    name = "Replace",
+    r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+    w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
+    f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
   },
 }
 

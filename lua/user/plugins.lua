@@ -48,7 +48,6 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
@@ -62,8 +61,8 @@ return packer.startup(function(use)
   use "folke/todo-comments.nvim" -- Gives hints on comments like TODO, BUG, etc.
   use "nacro90/numb.nvim" -- Allows to peek at line by using :{number}
 
-
-
+  -- utils
+  use "ghillb/cybu.nvim"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -111,9 +110,9 @@ return packer.startup(function(use)
 
   -- DAP
   use "mfussenegger/nvim-dap"
-  use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
-  use "Pocco81/DAPInstall.nvim"
+  use { "Pocco81/DAPInstall.nvim", commit = "24923c3"} -- in got a rebranding that's shit
+  use "theHamsta/nvim-dap-virtual-text"
 
   -- Note taking
   use 'vimwiki/vimwiki'
@@ -121,6 +120,11 @@ return packer.startup(function(use)
   -- Winbar
   use 'fgheng/winbar.nvim'
   use "SmiteshP/nvim-navic"
+
+
+  -- Not used
+  -- use "akinsho/bufferline.nvim"
+  
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
