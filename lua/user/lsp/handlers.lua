@@ -1,4 +1,5 @@
 local M = {}
+
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -53,7 +54,7 @@ M.setup = function()
 			source = "if_many", -- Or "always"
 			header = "",
 			prefix = "",
-			width = 40,
+			-- width = 40,
 		},
 	}
 
@@ -106,9 +107,9 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	attach_navic(client, bufnr)
 
-	--[[ if client.name == "tsserver" then ]]
-	--[[   require("lsp-inlayhints").on_attach(client, bufnr) ]]
-	--[[ end ]]
+	if client.name == "tsserver" then
+		require("lsp-inlayhints").on_attach(client, bufnr)
+	end
 
 	if client.name == "jdt.ls" then
 		vim.lsp.codelens.refresh()
