@@ -1,4 +1,4 @@
-vim.g.vimwiki_global_ext = 1
+vim.g.vimwiki_global_ext = 0
 vim.g.vimwiki_listsyms = "     X" -- Sets the todo "icons"
 vim.g.vimwiki_autowriteall = 1
 vim.g.vimwiki_customwiki2html='~/.local/share/nvim/site/pack/packer/start/vimwiki/autoload/vimwiki/customwiki2html.sh'

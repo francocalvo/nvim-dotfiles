@@ -7,6 +7,7 @@ require "user.lsp"                        -- OK - updated up to 2022/09/12
 require "user.telescope"                  -- OK - updated up to  5b240a9
 require "user.treesitter"                 -- OK - without textobjects part at the end
 require "user.autopairs"                  -- OK
+require "user.autotag"                    -- OK
 require "user.comment"                    -- OK
 require "user.gitsigns"                   -- OK
 require "user.nvim-tree"                  -- OK - updated up to  5b240a9
@@ -20,7 +21,7 @@ require "user.whichkey"                   -- OK
 require "user.autocommands"               -- updated up to 2022/09/12 
 require "user.illuminate"                 -- Not updated
 require "user.neoscroll"                  -- OK
-require "user.todo-comments"              -- OK
+--[[ require "user.todo-comments"              -- NOT OK ]]
 require "user.nvim-webdev-icons"          -- OK - updated up to 5b240a9
 require "user.numb"                       -- OK
 require "user.vimwiki"                    -- TODO: Finish setup
